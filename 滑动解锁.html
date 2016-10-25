@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        body{ background:coral;}
+        div{width:400px;
+            height:100px;
+            margin: 100px auto;
+            font-family: "微软雅黑 Light";
+            font-size:50px;
+            text-align:center;
+            line-height:100px;
+            color:rgba(0,0,0,0);
+            background:-webkit-linear-gradient(-45deg,black 10%,white 20%,black 30%);
+            -webkit-background-clip: text;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv = document.querySelector('div');
+            var n=0;
+            function show(n){
+                oDiv.style.background='-webkit-linear-gradient(-45deg,black '+n+'%,white '+(n+10)+'%,black '+(n+20)+'%)';
+                oDiv.style.WebkitBackgroundClip='text';
+            }
+            show(n);
+            setInterval(function(){
+                n++;
+                show(n%90);
+            },30)
+        }
+    </script>
+</head>
+<body>
+<div>移动滑块解锁</div>
+</body>
+</html>
